@@ -12,7 +12,6 @@ def main():
 
 def results(score):
     """obtain results from users score"""
-
     if score < 0 or not score <= 100:
         return 'invalid score'
     elif score >= 90:
