@@ -11,4 +11,10 @@ print(" Is your name", name, "(Y/N)")
 
 # confirm users name is correct. If not enter their real name
 confirm_name = input("-->: ").upper()
+if confirm_name != "Y" and confirm_name != "":
+    name = input("Please enter your name: ")
+
+# store name in directory( email_information) then display information neatly
+email_information[user_email] = name
+print("{} --> ({})".format(name, user_email))
 
