@@ -30,6 +30,7 @@ def nice_display(email_information):
     email_length = max(len(name) for name in email_information)
     for user_email, name in email_information.items():
         print("{:{}}{}".format(name, email_length, user_email))
+    return
 
 
 main()
