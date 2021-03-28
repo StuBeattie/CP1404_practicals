@@ -13,10 +13,7 @@ def main():
             name = input("Please enter your name: ")
         email_information[user_email] = name
         user_email = input("Please enter your email: ")
-
-        # Display users names and email address neatly
-    for user_email, name in email_information.items():
-        print("{} --> ({})".format(name, user_email))
+    print(nice_display(email_information))
 
 
 def get_name_from_email(user_email):
@@ -26,6 +23,13 @@ def get_name_from_email(user_email):
     # Find users name in email address
     name = " ".join(split_email_at_decimal).title()
     return name
+
+
+# align the emails so they are in one nice column
+def nice_display(email_information):
+    email_length = max(len(name) for name in email_information)
+    for user_email, name in email_information.items():
+        print("{:{}}{}".format(name, email_length, user_email))
 
 
 main()
