@@ -9,7 +9,7 @@ def main():
     while user_email != "":
         name = get_name_from_email(user_email)
         confirm_name = input(" Is your name {}? (Y/N): ".format(name)).upper()
-        if confirm_name != "Y" and confirm_name != "":
+        if confirm_name not in ("Y", ""):
             name = input("Please enter your name: ")
         email_information[user_email] = name
         user_email = input("Please enter your email: ")
@@ -30,7 +30,6 @@ def nice_display(email_information):
     email_length = max(len(name) for name in email_information)
     for user_email, name in email_information.items():
         print("{:{}}{}".format(name, email_length, user_email))
-    return
 
 
 main()
