@@ -1,7 +1,4 @@
-"""
-CP1404/CP5632 - Practical - Suggested Solution
-Fixed program to determine score status
-"""
+"""Fixed program to determine score status"""
 
 
 def main():
