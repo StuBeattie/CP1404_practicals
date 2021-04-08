@@ -4,10 +4,10 @@
 class ProgrammingLanguage:
     """Represent a programing language."""
 
-    def __init__(self, field, typing, reflection, year):
+    def __init__(self, language_name, typing, reflection, year):
         """Initialise table instance."""
 
-        self.field = field
+        self.language_name = language_name
         self.typing = typing
         self.reflection = reflection
         self.year = year
@@ -21,4 +21,4 @@ class ProgrammingLanguage:
         """Display programing language in string format."""
 
         return "{}, {} Typing, Reflection={}," \
-               " First appeared in {}".format(self.field, self.typing, self.reflection, self.year)
+               " First appeared in {}".format(self.language_name, self.typing, self.reflection, self.year)
