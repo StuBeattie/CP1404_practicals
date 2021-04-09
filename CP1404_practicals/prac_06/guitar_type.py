@@ -1,4 +1,4 @@
-"""Store information on guitar types."""
+"""Crate a class for guitars."""
 
 import datetime
 CURRENT_YEAR = datetime.date.today().year
