@@ -21,7 +21,7 @@ def main():
         print()
         name = input("Name: ")
 
-    # Add extra guitars to guitars list.
+    # Add extra guitars to guitars list for testing.
     guitars.append(GuitarInformation("Gibson L-5 CES", 1922, 16035.40))
     guitars.append(GuitarInformation("Line 6 JTV-59", 2010, 1512.9))
 
