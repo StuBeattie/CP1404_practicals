@@ -1,5 +1,9 @@
 """Store information on guitar types."""
 
+import datetime
+CURRENT_YEAR = datetime.date.today().year
+VINTAGE = 50
+
 
 class GuitarInformation:
     """Represent guitar information gathered from the user."""
@@ -14,13 +18,14 @@ class GuitarInformation:
     def display_guitar_info(self):
         """Display guitar information gathered from the user."""
 
-        return "{} ({}) : ${:.2f}".format(self.name, self.year, self.cost)
+        return "{} ({}) : ${:,.2f}".format(self.name, self.year, self.cost)
 
     def get_age(self):
         """Find the age of the guitar."""
 
-        return 2021 - self.year
+        return CURRENT_YEAR - self.year
 
     def is_vintage(self):
         """Identify if the guitar is >= 50 years old."""
 
+        return self.get_age() >= VINTAGE
