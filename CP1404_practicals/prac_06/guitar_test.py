@@ -15,6 +15,9 @@ def test():
     print("{} get_age() - Expected {}. Got {}".format(guitar.name, 99, guitar.get_age()))
     print("{} get_age() - Expected {}. Got {}".format(guitar.name, 8, other.get_age()))
 
+    print("{} is_vintage() - Expected {}. Got {}".format(guitar.name, "True", guitar.is_vintage()))
+    print("{} is_vintage() - Expected {}. Got {}".format(guitar.name, "False", other.is_vintage()))
+
 
 if __name__ == "__main__":
     test()
