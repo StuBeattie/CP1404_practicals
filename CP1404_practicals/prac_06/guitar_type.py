@@ -29,3 +29,7 @@ class GuitarInformation:
         """Identify if the guitar is >= 50 years old."""
 
         return self.get_age() >= VINTAGE
+
+    def __str__(self):
+        """Display programing language in string format."""
+        return "{:>13} ({}), worth ${:10,.2f}".format(self.name, self.year, self.cost)
