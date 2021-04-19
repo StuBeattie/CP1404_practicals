@@ -15,7 +15,6 @@ class BoxLayoutDemo(App):
 
     def handle_greet(self):
         """Connect buttons with GUI to allow user interaction."""
-        print("Greet")
         self.root.ids.output_label.text = "Hello " + self.root.ids.input_name.text
 
 
