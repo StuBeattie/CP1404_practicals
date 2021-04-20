@@ -21,5 +21,5 @@ def test():
     print("{} is_vintage() - Expected {}. Got {}".format(guitar.name, "False", other.is_vintage()))
 
 
-if __name__ != "__main__":
+if __name__ == "__main__":
     test()
