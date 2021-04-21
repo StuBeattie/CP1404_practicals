@@ -7,7 +7,7 @@ from kivy.app import App
 from kivy.lang import Builder
 from kivy.core.window import Window
 
-__author__ = "Stuart Beattie"
+MILES_TO_KM_CONVERSION = 1.60934
 
 
 class MilesToKilometersApp(App):
@@ -23,10 +23,14 @@ class MilesToKilometersApp(App):
     def handle_calculate(self, value):
         """ handle calculation (could be button press or other call), output result to label widget """
         try:
-            result = float(value) * 1.60934
-            self.root.ids.output_label.text = str("{:,.3f}".format(result))
+            result = float(value) * MILES_TO_KM_CONVERSION
+            self.root.ids.output_label.text = "{:,.3f}".format(result)
         except ValueError:
-            self.root.ids.output_label.text = 'Must be\n integer!'
+            self.root.ids.output_label.text = 'Must be an integer!'
+
+    def handle_increment(self):
+        """Adjust the input value by adding or subtracting one."""
+        pass
 
 
 MilesToKilometersApp().run()
