@@ -1,0 +1,16 @@
+BoxLayout:
+    orientation: "horizontal"
+    TextInput:
+            id: input_number
+            text: '34'
+            font_size: 48
+            multiline: False
+        Button:
+            text: 'Convert mi to km'
+            font_size: 48
+            # the following line specifies the function in the app class to call when the button is pressed
+            on_press: app.handle_calculate(input_number.text)
+        Label:
+            id: output_label
+            font_size: 48
+            color: (255/255.0, 192/255.0, 203/255.0, 1) #(0, 1, 1, 1)
