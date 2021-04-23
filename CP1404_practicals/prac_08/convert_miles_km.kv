@@ -9,6 +9,7 @@ BoxLayout:
             width: 500
             text: '34'
             font_size: 30
+            on_text: app.handle_calculate(input_number.text)
         BoxLayout:
             size_hint_x: 1
             orientation: "vertical"
@@ -20,11 +21,11 @@ BoxLayout:
                 font_size: 20
                 text: "Down"
                 on_press: app.decrease_increment(input_number.text)
-    Button:
-        text: 'Convert mi to km'
-        font_size: 30
-        # the following line specifies the function in the app class to call when the button is pressed
-        on_press: app.handle_calculate(input_number.text)
+#    Button:
+#        text: 'Convert mi to km'
+#        font_size: 30
+#        # the following line specifies the function in the app class to call when the button is pressed
+#        on_press: app.handle_calculate(input_number.text)
     Label:
         id: output_label
         text: 'Enter distance in "miles"'

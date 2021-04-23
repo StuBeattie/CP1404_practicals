@@ -38,7 +38,7 @@ class MilesToKilometersApp(App):
             self.root.ids.input_number.text = str(new_value)
             self.handle_calculate(new_value)
         except ValueError:
-            self.root.ids.input_number.text = str(0)
+            self.root.ids.input_number.text = str(1)
 
     def decrease_increment(self, value):
         """Decrease the input value by subtracting one then recalculate."""
@@ -47,7 +47,7 @@ class MilesToKilometersApp(App):
             self.root.ids.input_number.text = str(new_value)
             self.handle_calculate(new_value)
         except ValueError:
-            self.root.ids.input_number.text = str(0)
+            self.root.ids.input_number.text = str(-1)
 
 
 MilesToKilometersApp().run()
