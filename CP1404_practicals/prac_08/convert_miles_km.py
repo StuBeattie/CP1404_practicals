@@ -8,6 +8,8 @@ from kivy.lang import Builder
 from kivy.core.window import Window
 
 MILES_TO_KM_CONVERSION = 1.60934
+INCREASE_VALUE = 1
+DECREASE_VALUE = -1
 
 
 class MilesToKilometersApp(App):
@@ -26,11 +28,26 @@ class MilesToKilometersApp(App):
             result = float(value) * MILES_TO_KM_CONVERSION
             self.root.ids.output_label.text = "{:,.3f}".format(result)
         except ValueError:
-            self.root.ids.output_label.text = 'Must be an integer!'
+            # If error occurs reset input number to zero
+            self.root.ids.output_label.text = str(0.0)
 
-    def handle_increment(self):
-        """Adjust the input value by adding or subtracting one."""
-        pass
+    def increase_increment(self, value):
+        """Increase the input value by adding one then recalculate."""
+        try:
+            new_value = int(value) + INCREASE_VALUE
+            self.root.ids.input_number.text = str(new_value)
+            self.handle_calculate(new_value)
+        except ValueError:
+            self.root.ids.input_number.text = str(0)
+
+    def decrease_increment(self, value):
+        """Decrease the input value by subtracting one then recalculate."""
+        try:
+            new_value = int(value) - INCREASE_VALUE
+            self.root.ids.input_number.text = str(new_value)
+            self.handle_calculate(new_value)
+        except ValueError:
+            self.root.ids.input_number.text = str(0)
 
 
 MilesToKilometersApp().run()

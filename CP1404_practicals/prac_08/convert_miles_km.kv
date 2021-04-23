@@ -15,11 +15,11 @@ BoxLayout:
             Button:
                 font_size: 20
                 text: "Up"
-                on_press: app.handle_increment(+1)
+                on_press: app.increase_increment(input_number.text)
             Button:
                 font_size: 20
                 text: "Down"
-                on_press: app.handle_increment(new_result.text, -1)
+                on_press: app.decrease_increment(input_number.text)
     Button:
         text: 'Convert mi to km'
         font_size: 30
