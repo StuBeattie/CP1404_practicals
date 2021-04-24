@@ -8,8 +8,7 @@ from kivy.lang import Builder
 from kivy.core.window import Window
 
 MILES_TO_KM_CONVERSION = 1.60934
-INCREASE_VALUE = 1
-DECREASE_VALUE = -1
+CHANGE_VALUE = 1
 
 
 class MilesToKilometersApp(App):
@@ -29,14 +28,14 @@ class MilesToKilometersApp(App):
 
     def increase_increment(self, value):
         """Increase the input value by adding one then recalculate."""
-        new_value = int(self.sort_exceptions(value)) + INCREASE_VALUE
+        new_value = int(self.sort_exceptions(value)) + CHANGE_VALUE
         self.root.ids.input_number.text = str(new_value)
         self.handle_calculate(new_value)
 
     def decrease_increment(self, value):
         """Decrease the input value by subtracting one then recalculate."""
 
-        new_value = int(self.sort_exceptions(value)) - INCREASE_VALUE
+        new_value = int(self.sort_exceptions(value)) - CHANGE_VALUE
         self.root.ids.input_number.text = str(new_value)
         self.handle_calculate(new_value)
 
