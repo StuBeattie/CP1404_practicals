@@ -12,25 +12,32 @@ from kivy.uix.label import Label
 from kivy.properties import StringProperty
 
 
-class DynamicLabelsApp(App):
-    """Take a list of names and display each name in the GUI using separate labels."""
+class DynamicWidgetsApp(App):
+    """Main program - Kivy app to demo dynamic widget creation."""
     status_text = StringProperty()
 
     def __init__(self, **kwargs):
         """Construct main app."""
         super().__init__(**kwargs)
-        self.names = ["Bob Long", "Mick Stone", "Billy Bob", "Joe Slacker"]
+        # basic data example - list of names
+        self.names = ["Bob Brown", "Mick Stone", "Cat Cyan", "Oren Ochre", "Joe Roan"]
 
     def build(self):
         """Build the Kivy GUI."""
-        self.title = "Dynamic Labels"
+        self.title = "Dynamic labels"
         self.root = Builder.load_file('dynamic_labels.kv')
         self.create_widgets()
         return self.root
 
     def create_widgets(self):
-        """Create labels from the list and display them on the GUI"""
-        pass
+        """Create labels from list entries and add them to the GUI."""
+        for name in self.names:
+            # create a label for each name in the list.
+            temp_label = Label(text=name)
+            # add the label to the "entries_box" layout widget
+            self.root.ids.entries_box.add_widget(temp_label)
+            # update status text
+            self.status_text = "{}".format(name)
 
 
-DynamicLabelsApp().run()
+DynamicWidgetsApp().run()
