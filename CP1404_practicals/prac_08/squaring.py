@@ -26,7 +26,7 @@ class SquareNumberApp(App):
             result = float(value) ** 2
             self.root.ids.output_label.text = str(result)
         except ValueError:
-            self.root.ids.output_label.text = 'Must be\n integer!'
+            self.root.ids.output_label.text = 'Must be an\n integer!'
 
 
 SquareNumberApp().run()
