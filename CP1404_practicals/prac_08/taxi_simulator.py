@@ -24,16 +24,23 @@ def main():
         if menu_choice == "c":
             print("Taxis available: ")
             taxis_available(taxi_types)
-            taxi_choice = int(input("choose taxi: "))
+            # Choose the type of taxi to drive from taxi_type and complete error checking.
             try:
+                taxi_choice = int(input("Choose taxi: "))
                 current_taxi = taxi_types[taxi_choice]
             except IndexError:
+                print("Invalid choice")
+            except ValueError:
                 print("Invalid choice")
         elif menu_choice == "d":
             if current_taxi:
                 current_taxi.start_fare()
-                driving_distance = float(input("Drive how far? "))
-                current_taxi.drive(driving_distance)
+                # Input a distance to drive and complete error checking.
+                driving_distance = (input("Drive how far? "))
+                try:
+                    current_taxi.drive(float(driving_distance))
+                except ValueError:
+                    print("Invalid input")
                 cost = current_taxi.get_fare()
                 print("Your {} trip cost you ${:.2f}".format(current_taxi.name, cost))
                 total_cost += cost
