@@ -35,7 +35,7 @@ def main():
         # os.rename(filename, new_name)
 
         # Option 2: move file to new place, with new name
-        shutil.move(filename, 'temp/' + new_name)
+        # shutil.move(filename, 'temp/' + new_name)
 
 
 def get_fixed_filename(filename):
@@ -52,6 +52,11 @@ def demo_walk():
         print("\tcontains subdirectories:", subdirectories)
         print("\tand files:", filenames)
         print("(Current working directory is: {})".format(os.getcwd()))
+
+        # for filename in filenames:
+        #     full_name = os.path.join(directory_name, filename)
+        #     new_name = os.path.join(directory_name, get_fixed_filename(filename))
+        #     os.rename(full_name, new_name)
 
 
 main()
