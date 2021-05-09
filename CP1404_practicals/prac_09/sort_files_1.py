@@ -4,6 +4,7 @@ each extension type found in directory.
 """
 
 import os
+import shutil
 
 
 def main():
@@ -16,8 +17,18 @@ def main():
         if os.path.isdir(filename):
             continue
 
-        extension = filename.split(".")
-        print(extension)
+        # split and get extension type from list
+        extension = filename.split(".")[1]
+
+        # Conduct error checking for directories that already exist.
+        try:
+            os.mkdir(extension)
+        except FileExistsError:
+            pass
+
+        # Move file types to their correct directory.
+        shutil.move(filename, "{}/{}".format(extension, filename))
+        print("{}/{}".format(extension, filename))
 
 
 main()
