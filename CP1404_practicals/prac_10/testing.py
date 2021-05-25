@@ -51,17 +51,17 @@ def run_tests():
 def phrase_as_sentence(phrase):
     """format a phrase as a sentence,
     starting with a capital and ending with a single full stop.
-    >>> phrase_as_sentence("hello")
-    "Hello."
-    >>> phrase_as_sentence("It is an ex parrot.")
-    "It is an ex parrot."
-    >>> phrase_as_sentence("Can not think of anything.")
-    "Can not think of anything."
+    >>> phrase_as_sentence('hello')
+    'Hello.'
+    >>> phrase_as_sentence('It is an ex parrot.')
+    'It is an ex parrot.'
+    >>> phrase_as_sentence('Can not think of anything.')
+    'Can not think of anything.'
     """
     # starting with a capital and ending with a single full stop.
     sentence = phrase.capitalize()
-    if sentence[-1] != ".":
-        sentence += "."
+    if sentence[-1] != '.':
+        sentence += '.'
     return sentence
 
 
