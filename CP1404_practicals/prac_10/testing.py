@@ -48,22 +48,23 @@ def run_tests():
     assert test_car.fuel == 0, "Car does not set Fuel correctly"
 
 
-# (PyCharm may see your >>> doctest comments and run doctests anyway.)
-doctest.testmod()
-
 def phrase_as_sentence(phrase):
     """format a phrase as a sentence,
     starting with a capital and ending with a single full stop.
-    >>> phrase_as_sentence(hello)
+    >>> phrase_as_sentence("hello")
+    "Hello."
+    >>> phrase_as_sentence("It is an ex parrot.")
+    "It is an ex parrot."
+    >>> phrase_as_sentence("Can not think of anything.")
+    "Can not think of anything."
     """
-# starting with a capital and ending with a single full stop.
-# Important: start with a function header and just use pass as the body
-# then add doctests for 3 tests:
-# 'hello' -> 'Hello.'
-# 'It is an ex parrot.' -> 'It is an ex parrot.'
-# and one more you decide (one that is valid!)
-# test this and watch the tests fail
-# then write the body of the function so that the tests pass
+    # starting with a capital and ending with a single full stop.
+    sentence = phrase.capitalize()
+    if sentence[-1] != ".":
+        sentence += "."
+    return sentence
 
+
+doctest.testmod()
 
 run_tests()
