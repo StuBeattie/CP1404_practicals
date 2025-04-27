@@ -1,12 +1,6 @@
 """Fixed program to determine score status"""
 
 
-def main():
-    """Get users score and print results"""
-    score = float(input("Enter score: "))
-    print(results(score))
-
-
 def results(score):
     """obtain results from users score"""
     if score < 0 or not score <= 100:
@@ -17,6 +11,12 @@ def results(score):
         return 'Passable'
     else:
         return 'Bad'
+
+
+def main():
+    """Get users score and print results"""
+    score = float(input("Enter score: "))
+    print(results(score))
 
 
 main()
